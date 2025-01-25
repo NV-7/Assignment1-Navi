@@ -1,10 +1,6 @@
-/*
-Navi Bountho
-CSC 3130-01 Introduction to Algorithms
-Instructor: Estedban Parra Rodriguez
-1/25/2025
- */
+
 public class Main {
+
     public static void main(String[] args) {
 
         String test1 = "AGGTAB";
@@ -26,6 +22,7 @@ public class Main {
          int val = 3;
          RemoveElement remove = new RemoveElement();
          remove.removeElement(case1,val);
+
 
     }
 
