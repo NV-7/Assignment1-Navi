@@ -1,5 +1,5 @@
 /**
- * Navi bountho
+ * Navi
  */
 public class Main {
 
