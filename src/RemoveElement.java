@@ -9,9 +9,6 @@ public class RemoveElement {
                 targetPos++;
             }
         }
-        for(int x: nums){
-            System.out.print(x);
-        }
         return targetPos;
     }
 }

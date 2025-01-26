@@ -5,25 +5,68 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String test1 = "AGGTAB";
-        String test2 = "GXTXAYB";
+        CommonSubSequence commonSubSequence = new CommonSubSequence();
+        NotFib notFib = new NotFib();
+        RemoveElement removeElement = new RemoveElement();
+        WhereInSequence whereInSequence = new WhereInSequence();
 
-        String text1 = "abc";
-        String text2 = "abc";
+        String text1 = "AGGTAB";
+        String text2 = "GXTXAYB";
 
-        String text3 = "almanacs";
-        String text4 = "albatross";
+        String text3 = "abc";
+        String text4 = "abc";
 
-        String text5 = "gears of war";
-        String text6 = "History of warriors";
+        String text5 = "almanacs";
+        String text6 = "albatross";
 
-      //   System.out.println("\n" + commonSubsequence(test1,test2));
-        // double[] seq = notFib(1000);
+        String text7 = "gears of war";
+        String text8 = "History of warriors";
 
-         int[] case1 = {3,2,2,3};
-         int val = 3;
-         RemoveElement remove = new RemoveElement();
-         remove.removeElement(case1,val);
+        System.out.println("Length of largest common sub sequence of " + text1 + " and " + text2 + " is " + commonSubSequence.commonSubSeq(text1, text2));
+        System.out.println("Length of largest common sub sequence of " + text3 + " and " + text4 + " is " + commonSubSequence.commonSubSeq(text3, text4));
+        System.out.println("Length of largest common sub sequence of " + text5 + " and " + text6 + " is " + commonSubSequence.commonSubSeq(text5, text6));
+        System.out.println("Length of largest common sub sequence of " + text7+ " and " + text8 + " is " + commonSubSequence.commonSubSeq(text7, text8));
+
+        System.out.println();
+
+        int num1 = 10;
+        int num2 = 20;
+        int num3 = 30;
+
+       System.out.println("Seqeunce of not fib up to " + num1);
+       for(long x : notFib.notFib(num1)){
+           System.out.print(x + " ,");
+       }
+        System.out.println();
+        System.out.println("Seqeunce of not fib up to " + num2);
+        for(long x : notFib.notFib(num2)){
+            System.out.print(x + " ,");
+        }
+        System.out.println();
+        System.out.println("Seqeunce of not fib up to " + num3);
+        for(long x : notFib.notFib(num3)){
+            System.out.print(x + " ,");
+        }
+
+        System.out.println("\n");
+
+        int target1 = 8;
+        int target2 = 139;
+
+        System.out.println("Where the number " + target1 + " is in the sequence " + whereInSequence.whereInSeq(target1));
+        System.out.println("Where the number " + target2 + " is in the sequence " + whereInSequence.whereInSeq(target2));
+
+        int[] array1 = {3, 2, 2, 3};
+        int[] array2 = {0,1,2,2,3,0,4,2};
+        int val1 = 3;
+        int val2 = 2;
+System.out.println();
+
+
+        System.out.println("Number of elements that are not " + val1+ " in the array " + removeElement.removeElement(array1, val1));
+
+        System.out.println("Number of elements that are not " + val2+ " in the array " + removeElement.removeElement(array2, val1));
+
 
 
     }
@@ -33,12 +76,9 @@ public class Main {
         int[] array = new int[text2.length()];
         System.out.println(array.length);
         int length = 0;
+        int total = 0;
         for (int i = 0; i < text1.length(); i++) {
             int clength = 0;
-            for (int x : array) {
-                System.out.print(x);
-            }
-            System.out.print("\n");
             for (int j = 0; j < array.length; j++) {
                 if (clength < array[j]) {
                     clength = array[j];
@@ -47,25 +87,33 @@ public class Main {
                     array[j] = length;
                 }
             }
+
         }
         for (int x : array) {
             System.out.print(x);
         }
 
-        return array[array.length - 1];
+        return total;
     }
 
     public static double[] notFib(int n) {
 
-        double[] sequence = new double[n];
-        int m = 0;
+
+        double[] sequence;
+        if(n <1) {
+            sequence = new double[]{0, 1};
+            return sequence;
+        }
+
+        sequence = new double[n];
+
          double initial0, initial1, current;
         initial0 = 0;
         initial1 = 1;
-        m = 0;
         current = 0;
 
         for(int i = 0; i < sequence.length; i++){
+
             if(i == 0 || i == 1){
                 sequence[i] = initial0;
                 sequence[i+1] = initial1;
