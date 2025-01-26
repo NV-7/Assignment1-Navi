@@ -1,3 +1,8 @@
+/**
+ * By Navi Bountho
+ * This class NotFin contains a method called notFib which takes an input n
+ * and returns array of long integer containing not Fib numbers up to the input n.
+ */
 public class NotFib {
 
     public long[] notFib(int n) {

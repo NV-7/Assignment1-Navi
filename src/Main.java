@@ -1,5 +1,7 @@
 /**
- * Navi
+ * By Navi Bountho
+ * Assignment 1 Coding and Complexity
+ * 1/25/2025
  */
 public class Main {
 
